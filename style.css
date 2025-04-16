@@ -1,0 +1,387 @@
+/* Body Styles */
+body {
+    
+        font-family: "Michroma", sans-serif;
+       
+      
+    margin: 0;
+    padding: 0;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.download-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 10px 20px;
+    background-color: #060401;
+    color: rgb(156, 156, 188);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #00151b;
+}
+/* Increase font size for all headings */
+h1, h2, h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Specific font size changes */
+#about h2 {
+    font-size: 3rem;  /* Increases size of "About Me" title */
+}
+
+#skills h2 {
+    font-size: 3rem;  /* Increases size of "Skills" title */
+}
+
+#projects h2 {
+    font-size: 3rem;  /* Increases size of "Projects" title */
+}
+#certifications h2 {
+    font-size: 3rem;  /* Increases size of "Projects" title */
+}
+
+#contact h2 {
+    font-size: 3rem;  /* Increases size of "Contact" title */
+}
+
+
+/* Landing Section */
+#landing {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+}
+
+#landing h1 {
+    font-size: 5rem;
+}
+
+/* Section Styles */
+.section {
+    padding: 50px 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    margin: 50px auto;  /* Centering the section with a margin */
+    width: 80%;         /* Limiting width for better layout */
+}
+
+.section.show-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#about, #skills, #projects, #contact {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Center Aligning All Headings */
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* Skills Section */
+#skills .skills-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#skills .skill {
+    text-align: center;
+    margin: 20px;
+    width: 120px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#skills .skill img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#skills .skill p {
+    margin-top: 10px;
+}
+
+#skills .skill:hover {
+    transform: translateY(-10px); /* Slightly lift the skill when hovered */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing effect */
+}
+
+#skills .skill img:hover {
+    transform: scale(1.1); /* Slightly scale up the icon on hover */
+}
+.skill {
+    position: relative;
+  }
+  
+  .project-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Prevent text selection when hidden */
+  }
+  
+  .skill:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Skills Section hover effects */
+  #skills .skill:hover {
+    transform: translateY(-10px); /* Slightly lift the skill when hovered */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glowing effect */
+  }
+  
+  #skills .skill img:hover {
+    transform: scale(1.1); /* Slightly scale up the icon on hover */
+  }
+  
+
+/* Projects Section */
+#projects .projects-wrapper {
+    display: flex;
+    
+  
+}
+.flip-card-back {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: rotateY(180deg);
+    padding:  0px; /* Increased the right padding to shift text to the right */
+    border-radius: 10px;
+    text-align: left; /* Ensures text aligns to the left inside the back of the flip card */
+}
+
+/* Adjusting space between project cards */
+.projects-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Reduced the gap to bring the cards closer */
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 320px;
+    height: 200px;
+    perspective: 1000px;
+    transition: box-shadow 0.3s ease-in-out; /* Adding transition for the glow effect */
+}
+
+.flip-card:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Adding glow effect on hover */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-back {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+#certifications
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .cert-box {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .cert-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(24, 26, 26);
+    transition: transform 0.3s ease;
+  }
+  
+  .cert-box:hover img {
+    transform: scale(1.05);
+  }
+  
+  .cert-box p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Modal Styles */
+  .cert-modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cert-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(16, 17, 17, 0.256);
+  }
+  
+  .cert-modal .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  
+
+/* Contact Section */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact input, #contact textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+    color: white;
+}
+
+#contact button {
+    background-color: #f77f00;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact button:hover {
+    background-color: #f56d00;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-links a {
+    color: #ffffff7b;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #1a1919, 0 0 15px #1a1919;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+footer .social-links a:hover {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #1a1919, 0 0 30px #1a1919;
+    color: #1a1919;
+}
